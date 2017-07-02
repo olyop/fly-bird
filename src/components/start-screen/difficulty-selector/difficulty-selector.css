@@ -1,0 +1,28 @@
+.difficulty-selector {
+	margin-bottom: 20px;
+  align-content: center;
+  justify-content: center;
+	display: flex; }
+	.difficulty-selector .difficulty-selector-button {
+		width: 60px;
+		height: 60px; }
+	.difficulty-selector .difficulty-selector-button i {
+		-webkit-user-select: none;
+		font-size: 40px;
+		transition: .2s all;
+		padding: 10px;
+		color: #fff;
+		cursor: pointer;
+		border-radius: 100%; }
+		.difficulty-selector i:hover {
+			background-color: #0288D1; }
+	.difficulty-selector span {
+		-webkit-user-select: none;
+		cursor: pointer;
+		font-size: 30px;
+		width: 170px;
+		text-align: center;
+		padding: 10px 30px;
+		color: #fff; }
+		.difficulty-selector span:hover {
+			text-decoration: underline; }

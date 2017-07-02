@@ -1,0 +1,35 @@
+.start-screen {
+	margin: 0;
+  height: 600px;
+  width: 600px;
+  box-shadow:
+    0 0 4px rgba(0,0,0,.14),
+    0 4px 8px rgba(0,0,0,.28);
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  display: flex; }
+	.start-screen h1 {
+		font-size: 36px;
+    margin: 0 auto;
+    text-align: center;
+		color: #fff;
+		padding: 20px 80px;
+		margin-bottom: 20px; }
+	.start-screen button {
+    margin: 0 auto;
+		padding: 10px 60px;
+		-webkit-user-select: none;
+		font-size: 20px;
+		text-align: center;
+		cursor: pointer;
+		outline: none;
+		color: #fff;
+		border: none;
+		border-radius: 15px; }
+    .start-screen button span {
+      color: #fff; }
+		.start-screen button:active {
+			box-shadow: 0 5px !important;
+			transform: translateY(5px); }
+

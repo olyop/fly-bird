@@ -10,3 +10,16 @@ body {
 		text-decoration: none;
 		color: #333333;
 		margin: 0; }
+
+.index {
+	width: 100vw;
+	height: 100vh; }
+	.index .index-inner {
+		margin: 0;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		margin-right: -50%;
+		transform: translate(-50%, -50%);
+    height: 600px;
+    width: 600px; }
