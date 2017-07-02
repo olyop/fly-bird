@@ -1,0 +1,12 @@
+@import url('../src/fonts/roboto/font.css');
+@import url('../src/fonts/material-icons/font.css');
+
+body {
+	margin: 0;
+	border: 0;
+	padding: 0; }
+	body, h1, h2, h3, h4, h5 h6, p, i, a, bold, span, strong, div, section, nav, aside {
+		font-family: 'Roboto', sans-serif;
+		text-decoration: none;
+		color: #333333;
+		margin: 0; }
