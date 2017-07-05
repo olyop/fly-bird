@@ -4,6 +4,11 @@ const database = {
 	difficultyLevelNames: [
 		'Normal', 'Hard', 'Expert'
 	],
+  
+  minWallHeight: 50,
+  wallGap: 100,
+  jumpInterval: 10,
+  
   hex: {
     p: [
       '#E1F5FE', // 50

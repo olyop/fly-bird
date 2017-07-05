@@ -1,0 +1,45 @@
+.world {
+  display: flex;
+  height: 600px;
+  margin-bottom: 20px;
+  box-shadow:
+    0 0 4px rgba(0,0,0,.14),
+    0 4px 8px rgba(0,0,0,.28);
+  width: 600px; }
+  .world .world-inner {
+    width: 600px;
+    overflow: hidden;
+    background-repeat: repeat-x;
+    background-size: 288px;
+    position: relative; }
+
+.world .test {
+  position: absolute;
+  left: 800px;
+  width: 20px;
+  height: 20px;
+  background-color: red;
+  top: 200px; }
+
+.world .wall {
+  position: absolute;
+  width: 50px;
+  height: 600px; }
+  .world .wall-inner {
+    height: 600px;
+    position: relative; }
+    .world .wall-inner .wall-top,
+    .world .wall-inner .wall-bottom {
+      position: absolute;
+      background-color: #000;
+      left: 0;
+      right: 0;
+      width: 50px; }
+
+.world .wall-inner .wall-top {
+  top: 0;
+}
+
+.world .wall-inner .wall-bottom {
+  bottom: 0;
+}

@@ -28,7 +28,7 @@ const StartGame = props => {
 
 const StartScreen = props => {
 	return (
-		<div className="start-screen"
+		<div className="window start-screen"
       style={{ backgroundColor: props.database.hex.p[5] }}>
 
 			<GameTitle
@@ -36,7 +36,7 @@ const StartScreen = props => {
 			
 			<DifficultySelector
         database={props.database}
-        gameState={props.gameState}
+        indexState={props.indexState}
         makeDifficultyEasier={props.makeDifficultyEasier}
         makeDifficultyHarder={props.makeDifficultyHarder} />
 			

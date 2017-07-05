@@ -21,5 +21,10 @@ body {
 		left: 50%;
 		margin-right: -50%;
 		transform: translate(-50%, -50%);
-    height: 600px;
+    height: 700px;
     width: 600px; }
+
+.window {
+	margin: 0;
+  height: 700px;
+  width: 600px; }

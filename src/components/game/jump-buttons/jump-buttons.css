@@ -1,0 +1,37 @@
+.jump-buttons {
+  background-color: #000;
+  width: 600px;
+  height: 80px;
+  box-shadow:
+    0 0 4px rgba(0,0,0,.14),
+    0 4px 8px rgba(0,0,0,.28);
+  display: flex;
+  flex-direction: row; }
+  .jump-buttons button {
+    margin: 10px;
+    height: 50px;
+    width: 285px;
+    -webkit-user-select: none;
+    font-size: 20px;
+    text-align: center;
+    cursor: pointer;
+    outline: none;
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 10px #616161;
+    background-color: #212121; }
+    .jump-buttons button:active {
+      box-shadow: 0 5px #424242;
+      transform: translateY(5px); }
+    .jump-buttons button i {
+      color: #fff;
+      font-size: 45px; }
+  .jump-buttons #jump-button-1 {
+    margin-right: 5px; }
+  .jump-buttons #jump-button-2 {
+    margin-left: 5px; }

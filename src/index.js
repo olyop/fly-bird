@@ -10,6 +10,7 @@ import './index.css'
 
 // Import components
 import StartScreen from './components/start-screen/start-screen'
+import Game from './components/game/game'
 
 // Import database
 import databaseImport from './database'
@@ -22,15 +23,14 @@ class Index extends React.Component {
 		
 		this.state = {
 			hasGameStarted: true,
-			score: 0,
-			difficultyLevel: 0
+			difficultyLevel: 0,
+      highScore: 0
 		}
 		
 		this.startGame = this.startGame.bind(this)
 		this.closeGame = this.closeGame.bind(this)
 		this.makeDifficultyEasier = this.makeDifficultyEasier.bind(this)
 		this.makeDifficultyHarder = this.makeDifficultyHarder.bind(this)
-		this.incrementScore = this.incrementScore.bind(this)
 	}
 	
 	startGame() {
@@ -53,10 +53,6 @@ class Index extends React.Component {
 		}
 	}
 	
-	incrementScore() {
-		this.setState({ score: this.state.score + 1 })
-	}
-	
 	render() {
     
     const props = this.props
@@ -66,11 +62,22 @@ class Index extends React.Component {
         style={{ backgroundColor: props.database.hex.p[9] }}>
 				<div className="index-inner">
 
-					<StartScreen
-            database={props.database}
-            gameState={this.state}
-            makeDifficultyEasier={this.makeDifficultyEasier}
-            makeDifficultyHarder={this.makeDifficultyHarder} />
+          {this.state.hasGameStarted ? (
+            
+            <Game
+              database={props.database}
+              indexState={this.state} />
+            
+          ) : (
+            
+            <StartScreen
+              database={props.database}
+              indexState={this.state}
+              startGame={this.startGame}
+              makeDifficultyEasier={this.makeDifficultyEasier}
+              makeDifficultyHarder={this.makeDifficultyHarder} />
+            
+          )}
 
 				</div>
 			</div>

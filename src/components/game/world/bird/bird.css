@@ -1,0 +1,10 @@
+.bird {
+	-webkit-user-select: none;
+	position: absolute;
+  transition: .2s top;
+	z-index: 12;
+	width: 68px;
+	height: 48px; }
+	.bird img {
+		height: 50px;
+		height: 50px; }

@@ -1,14 +1,12 @@
 .start-screen {
-	margin: 0;
-  height: 600px;
-  width: 600px;
-  box-shadow:
-    0 0 4px rgba(0,0,0,.14),
-    0 4px 8px rgba(0,0,0,.28);
   flex-direction: column;
   align-content: center;
   justify-content: center;
+  box-shadow:
+    0 0 4px rgba(0,0,0,.14),
+    0 4px 8px rgba(0,0,0,.28);
   display: flex; }
+
 	.start-screen h1 {
 		font-size: 36px;
     margin: 0 auto;
@@ -16,6 +14,7 @@
 		color: #fff;
 		padding: 20px 80px;
 		margin-bottom: 20px; }
+
 	.start-screen button {
     margin: 0 auto;
 		padding: 10px 60px;
@@ -24,8 +23,8 @@
 		text-align: center;
 		cursor: pointer;
 		outline: none;
-		color: #fff;
 		border: none;
+		color: #fff;
 		border-radius: 15px; }
     .start-screen button span {
       color: #fff; }
