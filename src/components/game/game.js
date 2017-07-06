@@ -3,7 +3,7 @@ import React from 'react'
 import './game.css'
 
 import World from './world/world'
-import JumpButtons from './jump-buttons/jump-buttons'
+import Button from './button'
 
 import generateWalls from './generate-walls'
 
@@ -15,7 +15,8 @@ class Game extends React.Component {
     this.state = {
       walls: generateWalls(props.indexState.difficultyLevel, props.database.minWallHeight, props.database.wallGap),
       scroll: 0,
-      birdTop: 220
+      birdTop: 220,
+      score: 42
     }
     
     this.birdUp = this.birdUp.bind(this)
@@ -23,9 +24,7 @@ class Game extends React.Component {
   }
   
   componentDidMount() { this.timerID = setInterval( () => this.tick(), 30 ) }
-
   componentWillUnmount() { clearInterval(this.timerID) }
-
   tick() { this.setState({ scroll: this.state.scroll + 3 }) }
   
   birdUp() {
@@ -76,9 +75,17 @@ class Game extends React.Component {
           indexState={props.indexState}
           gameState={state} />
         
-        <JumpButtons
-          birdUp={this.birdUp}
-          birdDown={this.birdDown} />
+        <div className="jump-buttons">
+          
+          <Button idString="jump-button-1"
+            iconText="keyboard_arrow_up"
+            clickEvent={this.birdUp} />
+          
+          <Button idString="jump-button-2"
+            iconText="keyboard_arrow_down"
+            clickEvent={this.birdDown} />
+          
+        </div>
         
       </div>
     )

@@ -13,7 +13,7 @@ const DifficultySelector = props => (
       )}
     </div>
 
-    <span>{props.database.difficultyLevelNames[props.indexState.difficultyLevel]}</span>
+    <span>{props.database.difficultyLevels[props.indexState.difficultyLevel].name}</span>
 
     <div className="difficulty-selector-button">
       {props.indexState.difficultyLevel === 2 ? null : (

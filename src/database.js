@@ -1,13 +1,25 @@
 const database = {
+  
 	gameTitle: 'Jump Bird',
 	startButtonText: 'Start...',
-	difficultyLevelNames: [
-		'Normal', 'Hard', 'Expert'
+  
+	difficultyLevels: [
+    {
+      name: 'Easy',
+      desc: 'Easy difficulty'
+    },
+    {
+      name: 'Moderate',
+      desc: 'Moderate difficulty'
+    },
+    {
+      name: 'Hard',
+      desc: 'Hardest difficulty'
+    }
 	],
   
   minWallHeight: 50,
-  wallGap: 100,
-  jumpInterval: 10,
+  jumpInterval: 40,
   
   hex: {
     p: [

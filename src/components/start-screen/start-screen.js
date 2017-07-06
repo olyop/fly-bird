@@ -39,6 +39,8 @@ const StartScreen = props => {
         indexState={props.indexState}
         makeDifficultyEasier={props.makeDifficultyEasier}
         makeDifficultyHarder={props.makeDifficultyHarder} />
+    
+      <p>{props.database.difficultyLevels[props.indexState.difficultyLevel].desc}</p>
 			
 			<StartGame
         database={props.database}

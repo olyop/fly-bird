@@ -1,0 +1,7 @@
+@font-face {
+  font-family: 'Gloria Hallelujah', cursive;
+  font-style: normal;
+  font-weight: 500;
+  src: url(./files/gloria-hallelujah.ttf) format('ttf');
+  unicode-range: U+0460-052F, U+20B4, U+2DE0-2DFF, U+A640-A69F;
+}

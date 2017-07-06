@@ -13,14 +13,6 @@
     background-size: 288px;
     position: relative; }
 
-.world .test {
-  position: absolute;
-  left: 800px;
-  width: 20px;
-  height: 20px;
-  background-color: red;
-  top: 200px; }
-
 .world .wall {
   position: absolute;
   width: 50px;
@@ -35,11 +27,15 @@
       left: 0;
       right: 0;
       width: 50px; }
+    .world .wall-inner .wall-top {
+      top: 0; }
+    .world .wall-inner .wall-bottom {
+      bottom: 0; }
 
-.world .wall-inner .wall-top {
-  top: 0;
-}
-
-.world .wall-inner .wall-bottom {
-  bottom: 0;
-}
+.world .world-inner .score {
+  position: fixed;
+  z-index: 4;
+  top: 75px;
+  left: 260px;
+  font-size: 60px;
+  color: #fff; }

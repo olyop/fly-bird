@@ -1,0 +1,6 @@
+@font-face {
+  font-family: 'Indie Flower', cursive;
+  font-style: normal;
+  src: url(./files/indie-flower.ttf) format('ttf');
+  unicode-range: U+0460-052F, U+20B4, U+2DE0-2DFF, U+A640-A69F;
+}

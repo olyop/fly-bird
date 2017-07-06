@@ -14,17 +14,17 @@ const World = props => {
         id="world-inner"
         style={{
           backgroundImage: 'url(' + background + ')',
-          backgroundColor: props.database.hex.p[4]
-        }}>
+          backgroundColor: props.database.hex.p[4] }}>
 
         <Sun
           top={55}
           left={2650} />
-        <div className="test"></div>
 
         <Bird
           top={props.gameState.birdTop}
           left={(props.gameState.scroll + 265) - 4 } />
+        
+        <div className="score">{props.gameState.score}</div>
         
         <div>
           {props.gameState.walls.map((wall, index) => (

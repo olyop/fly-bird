@@ -1,27 +1,40 @@
 import { rand } from '../common/rand'
 
-const generateWalls = (difficultyLevel, minWallHeight, wallGap) => {
+const generateWalls = (difficultyLevel, minWallHeight) => {
   
   // Declare empty wall array
   let arr = [];
   
   const w = 600,
-        m = minWallHeight,
-        g = wallGap
+        m = minWallHeight
+        
+  // Determine spacing of walls
+  let g
+  if (difficultyLevel === 0) { g = 150 }
+  if (difficultyLevel === 1) { g = 125 }
+  if (difficultyLevel === 2) { g = 100 }
   
   // Determine wall range
   const r = w - (2 * m)
   
-  for (var i = 3; i <= 500; i++) {
+  for (var i = 3; i <= 400; i++) {
     
     let x = rand(0, r)
     
-    let b = m + x
+    let y = r - x
     
-    let t = w - (b + g)
+    let b = x
+    
+    let t = w - g - b
+    
+    // Determine spacing of walls
+    let wallSpacing
+    if (difficultyLevel === 0) { wallSpacing = 400 }
+    if (difficultyLevel === 1) { wallSpacing = 350 }
+    if (difficultyLevel === 2) { wallSpacing = 300 }
     
     arr.push({
-      left: i * 300,
+      left: i * wallSpacing,
       wallBottom: b,
       wallTop: t
     })
