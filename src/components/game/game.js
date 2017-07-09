@@ -16,17 +16,21 @@ class Game extends React.Component {
       walls: generateWalls(props.indexState.difficultyLevel, props.database.minWallHeight, props.database.wallGap),
       scroll: 0,
       birdTop: 220,
-      score: 42
+      score: 0
     }
     
     this.birdUp = this.birdUp.bind(this)
     this.birdDown = this.birdDown.bind(this)
+		
+		this.incrementScore = this.incrementScore.bind(this)
   }
   
-  componentDidMount() { this.timerID = setInterval( () => this.tick(), 30 ) }
+	// World tick function
+  componentDidMount() { this.timerID = setInterval( () => this.tick(), 33 ) }
   componentWillUnmount() { clearInterval(this.timerID) }
   tick() { this.setState({ scroll: this.state.scroll + 3 }) }
   
+	// Bird controls
   birdUp() {
     
     const birdTop = this.state.birdTop,
@@ -40,7 +44,6 @@ class Game extends React.Component {
       this.setState({ birdTop: birdTop - jumpInterval })
     }
   }
-  
   birdDown() {
     
     const birdTop = this.state.birdTop,
@@ -55,6 +58,11 @@ class Game extends React.Component {
     }
     
   }
+	
+	// Score functios
+	incrementScore() {
+		this.setState({ score: this.state.score + 1 })
+	}
   
   render() {
     
@@ -65,6 +73,20 @@ class Game extends React.Component {
 		if (document.getElementById('world-inner') != undefined) {
 			document.getElementById('world-inner').scrollLeft = this.state.scroll
 		}
+		
+		// Determine bird's position
+		const birdLeft = state.scroll + 265
+		
+		// Turn object array into simple array
+		let simpleWallArray = []
+		
+		for (var i = 0; i < state.walls.arrayLength; i++) {
+			simpleWallArray.push(state.walls.array[i].left)
+		}
+		
+		const targetWall = simpleWallArray.filter(wall => wall > birdLeft)[0]
+		
+		console.log(targetWall)
     
     return (
       <div className="window game"
@@ -73,7 +95,8 @@ class Game extends React.Component {
         <World
           database={props.database}
           indexState={props.indexState}
-          gameState={state} />
+          gameState={state}
+					birdLeft={birdLeft} />
         
         <div className="jump-buttons">
           

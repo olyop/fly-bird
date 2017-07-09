@@ -17,11 +17,9 @@ const generateWalls = (difficultyLevel, minWallHeight) => {
   // Determine wall range
   const r = w - (2 * m)
   
-  for (var i = 3; i <= 400; i++) {
+  for (var i = 3; i <= 100; i++) {
     
     let x = rand(0, r)
-    
-    let y = r - x
     
     let b = x
     
@@ -40,7 +38,10 @@ const generateWalls = (difficultyLevel, minWallHeight) => {
     })
   }
   
-  return arr
+  return {
+		array: arr,
+		arrayLength: arr.length
+	}
 }
 
 export default generateWalls

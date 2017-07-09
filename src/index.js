@@ -23,7 +23,7 @@ class Index extends React.Component {
 		
 		this.state = {
 			hasGameStarted: false,
-			difficultyLevel: 0,
+			difficultyLevel: 1,
       highScore: 0
 		}
 		

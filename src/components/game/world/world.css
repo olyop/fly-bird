@@ -9,7 +9,6 @@
   .world .world-inner {
     width: 600px;
     overflow: hidden;
-    background-repeat: repeat-x;
     background-size: 288px;
     position: relative; }
 
@@ -30,12 +29,16 @@
     .world .wall-inner .wall-top {
       top: 0; }
     .world .wall-inner .wall-bottom {
+			color: #fff;
+			font-size: 18px;
       bottom: 0; }
 
 .world .world-inner .score {
   position: fixed;
   z-index: 4;
   top: 75px;
-  left: 260px;
+  left: 0;
+	right: 0;
+	text-align: center;
   font-size: 60px;
   color: #fff; }

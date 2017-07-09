@@ -22,17 +22,17 @@ const World = props => {
 
         <Bird
           top={props.gameState.birdTop}
-          left={(props.gameState.scroll + 265) - 4 } />
+          left={props.birdLeft} />
         
         <div className="score">{props.gameState.score}</div>
-        
+        	 
         <div>
-          {props.gameState.walls.map((wall, index) => (
+          {props.gameState.walls.array.map((wall, index) => (
             <div className="wall" style={{ left: wall.left }}
               key={index}>
               <div className="wall-inner">
                 <div className="wall-top" style={{ height: wall.wallTop }}></div>
-                <div className="wall-bottom" style={{ height: wall.wallBottom }}></div>
+                <div className="wall-bottom" style={{ height: wall.wallBottom }}>{wall.left}</div>
               </div>
             </div>
           ))}

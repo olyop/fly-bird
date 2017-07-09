@@ -1,7 +1,7 @@
 .bird {
 	-webkit-user-select: none;
 	position: absolute;
-  transition: .2s top;
+  transition: .3s top;
 	z-index: 12;
 	width: 68px;
 	height: 48px; }
