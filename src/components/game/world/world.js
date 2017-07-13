@@ -4,39 +4,41 @@ import './world.css'
 
 import Sun from './sun/sun'
 import Bird from './bird/bird'
+import Walls from './walls/walls'
 
 import background from './background.png'
 
 const World = props => {
+	
+	const style = {
+		backgroundImage: 'url(' + background + ')',
+		backgroundColor: props.database.hex.p[4]
+	}
+	
   return (
     <div className="world">      
       <div className="world-inner"
         id="world-inner"
-        style={{
-          backgroundImage: 'url(' + background + ')',
-          backgroundColor: props.database.hex.p[4] }}>
+        style={style}>
 
         <Sun
-          top={55}
-          left={2650} />
+          x={265}
+          y={450} />
 
         <Bird
-          top={props.gameState.birdTop}
-          left={props.birdLeft} />
+          y={props.bird_y}
+          x={props.bird_x} />
         
         <div className="score">{props.gameState.score}</div>
         	 
-        <div>
-          {props.gameState.walls.array.map((wall, index) => (
-            <div className="wall" style={{ left: wall.left }}
-              key={index}>
-              <div className="wall-inner">
-                <div className="wall-top" style={{ height: wall.wallTop }}></div>
-                <div className="wall-bottom" style={{ height: wall.wallBottom }}>{wall.left}</div>
-              </div>
-            </div>
-          ))}
-        </div>
+        <Walls
+					database={props.database}
+					gameState={props.gameState} />
+				
+				<div className="exit-game"
+					onClick={props.exitGame}>
+					<i className="material-icons">close</i>
+				</div>
 
       </div>
     </div>

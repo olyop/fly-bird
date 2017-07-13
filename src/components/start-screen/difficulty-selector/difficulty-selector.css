@@ -1,6 +1,7 @@
 .difficulty-selector {
   align-content: center;
   justify-content: center;
+	margin-bottom: 20px;
 	display: flex; }
 	.difficulty-selector .difficulty-selector-button {
 		width: 60px;

@@ -12,33 +12,38 @@
     background-size: 288px;
     position: relative; }
 
-.world .wall {
-  position: absolute;
-  width: 50px;
-  height: 600px; }
-  .world .wall-inner {
-    height: 600px;
-    position: relative; }
-    .world .wall-inner .wall-top,
-    .world .wall-inner .wall-bottom {
-      position: absolute;
-      background-color: #000;
-      left: 0;
-      right: 0;
-      width: 50px; }
-    .world .wall-inner .wall-top {
-      top: 0; }
-    .world .wall-inner .wall-bottom {
-			color: #fff;
-			font-size: 18px;
-      bottom: 0; }
-
 .world .world-inner .score {
   position: fixed;
   z-index: 4;
-  top: 75px;
-  left: 0;
-	right: 0;
+	font-size: 90px;
+	color: #fff;
+	font-weight: 800;
 	text-align: center;
-  font-size: 60px;
-  color: #fff; }
+  top: 25px;
+	-webkit-user-select: none;
+  left: 0;
+	right: 0; }
+
+.world .world-inner .exit-game {
+	top: 0;
+	right: 0;
+	z-index: 5;
+	display: flex;
+	border-radius: 0 0 0 100%;
+	position: fixed;
+	transition: .2s all;
+  box-shadow:
+    0 0 4px rgba(0,0,0,.14),
+    0 4px 8px rgba(0,0,0,.28);
+	width: 40px;
+	cursor: pointer;
+	height: 40px;
+	padding: 5px;
+	flex-direction: row-reverse;
+	background-color: #F44336; }
+	.world .world-inner .exit-game:hover {
+		background-color: #D32F2F; }
+	.world .world-inner .exit-game i {
+		-webkit-user-select: none;
+		font-size: 20px;
+		color: #fff; }

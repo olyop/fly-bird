@@ -7,8 +7,8 @@ import './sun.css'
 const Sun = props => (
 	<div className="sun"
 		style={{
-			top: String(props.top) + 'px',
-			left: String(props.left) + 'px'
+			bottom: String(props.y) + 'px',
+			left: String(props.x) + 'px'
 		}}>
 		<div className="ray_box">
 			<div className="ray ray1"></div>

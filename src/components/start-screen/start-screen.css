@@ -19,7 +19,7 @@
     margin: 0 auto;
 		padding: 10px 60px;
 		-webkit-user-select: none;
-		font-size: 20px;
+		font-size: 24px;
 		text-align: center;
 		cursor: pointer;
 		outline: none;
@@ -31,13 +31,3 @@
 		.start-screen button:active {
 			box-shadow: 0 5px !important;
 			transform: translateY(5px); }
-
-.start-screen p {
-  padding: 16px;
-  width: 250px;
-  text-align: center;
-  margin: 0 auto 40px auto;
-  background-color: rgba(0,0,0,0.8);
-  border-radius: 10px;
-  color: #fff;
-  font-size: 24px; }

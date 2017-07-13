@@ -13,8 +13,8 @@ import SpriteAnimator from 'react-sprite-animator'
 const Bird = props => (
 	<div className="bird"
 		style={{
-			left: props.left,
-			top: props.top,
+			left: props.x,
+			bottom: props.y,
 		}}>
 
 		<SpriteAnimator

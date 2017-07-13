@@ -15,7 +15,7 @@ class Game extends React.Component {
     this.state = {
       walls: generateWalls(props.indexState.difficultyLevel, props.database.minWallHeight, props.database.wallGap),
       scroll: 0,
-      birdTop: 220,
+      bird_y: 220,
       score: 0
     }
     
@@ -31,30 +31,30 @@ class Game extends React.Component {
   tick() { this.setState({ scroll: this.state.scroll + 3 }) }
   
 	// Bird controls
-  birdUp() {
-    
-    const birdTop = this.state.birdTop,
-          jumpInterval = this.props.database.jumpInterval
-    
-    if (birdTop === 0) {
-      return
-    } else if ((birdTop - jumpInterval) < 0) {
-      this.setState({ birdTop: 0 })
-    } else {
-      this.setState({ birdTop: birdTop - jumpInterval })
-    }
-  }
   birdDown() {
     
-    const birdTop = this.state.birdTop,
+    const bird_y = this.state.bird_y,
           jumpInterval = this.props.database.jumpInterval
     
-    if (birdTop === 552) {
+    if (bird_y === 0) {
       return
-    } else if ((birdTop + jumpInterval) > 552) {
-      this.setState({ birdTop: 552 })
+    } else if ((bird_y - jumpInterval) < 0) {
+      this.setState({ bird_y: 0 })
     } else {
-      this.setState({ birdTop: birdTop + jumpInterval })
+      this.setState({ bird_y: bird_y - jumpInterval })
+    }
+  }
+  birdUp() {
+    
+    const bird_y = this.state.bird_y,
+          jumpInterval = this.props.database.jumpInterval
+    
+    if (bird_y === 552) {
+      return
+    } else if ((bird_y + jumpInterval) > 552) {
+      this.setState({ bird_y: 552 })
+    } else {
+      this.setState({ bird_y: bird_y + jumpInterval })
     }
     
   }
@@ -75,7 +75,8 @@ class Game extends React.Component {
 		}
 		
 		// Determine bird's position
-		const birdLeft = state.scroll + 265
+		const bird_x = state.scroll + 265,
+					bird_y = state.bird_y
 		
 		// Turn object array into simple array
 		let simpleWallArray = []
@@ -84,9 +85,7 @@ class Game extends React.Component {
 			simpleWallArray.push(state.walls.array[i].left)
 		}
 		
-		const targetWall = simpleWallArray.filter(wall => wall > birdLeft)[0]
-		
-		console.log(targetWall)
+//		const targetWall = simpleWallArray.filter(wall => wall > bird_x)[0]
     
     return (
       <div className="window game"
@@ -96,7 +95,9 @@ class Game extends React.Component {
           database={props.database}
           indexState={props.indexState}
           gameState={state}
-					birdLeft={birdLeft} />
+					exitGame={props.exitGame}
+					bird_x={bird_x}
+					bird_y={bird_y} />
         
         <div className="jump-buttons">
           

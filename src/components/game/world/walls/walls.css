@@ -1,0 +1,24 @@
+.world .wall {
+  position: absolute;
+  width: 50px;
+	z-index: 3;
+  height: 600px; }
+  .world .wall-inner {
+    height: 600px;
+    position: relative; }
+    .world .wall-inner .wall-top,
+    .world .wall-inner .wall-bottom {
+      position: absolute;
+			background-color: #000;
+			box-shadow:
+				0 0 4px rgba(0,0,0,.14),
+				0 4px 8px rgba(0,0,0,.28);
+      left: 0;
+      right: 0;
+      width: 50px; }
+    .world .wall-inner .wall-top {
+			border-radius: 0 0 5px 5px;
+      top: 0; }
+    .world .wall-inner .wall-bottom {
+			border-radius: 5px 5px 0 0;
+      bottom: 0; }
