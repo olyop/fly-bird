@@ -5,6 +5,8 @@ import './game.css'
 import World from './world/world'
 import Button from './button'
 
+import includes from 'lodash/includes'
+
 import generateWalls from './generate-walls'
 
 class Game extends React.Component {
@@ -25,10 +27,28 @@ class Game extends React.Component {
 		this.incrementScore = this.incrementScore.bind(this)
   }
   
-	// World tick function
-  componentDidMount() { this.timerID = setInterval( () => this.tick(), 33 ) }
+	// World tick functions
+  componentDidMount() { this.timerID = setInterval( () => this.tick(), 33 ) } // '33' is the 'frame rate'.
   componentWillUnmount() { clearInterval(this.timerID) }
-  tick() { this.setState({ scroll: this.state.scroll + 3 }) }
+  tick() {
+    
+    let newArray = []
+    
+    for (var i = 0; i < this.state.walls.arrayLength; i++) {
+      newArray.push(this.state.walls.array[i].left)
+    }
+    
+    if (includes(newArray, this.state.scroll + 200)) {
+      this.setState((prevState, props) => ({
+        scroll: prevState.scroll + 4,
+        score: prevState.score + 1
+      }))
+    } else {
+      this.setState({
+        scroll: this.state.scroll + 4
+      })
+    }
+  }
   
 	// Bird controls
   birdDown() {
@@ -69,23 +89,18 @@ class Game extends React.Component {
     const props = this.props,
           state = this.state
     
+    // Set the game's scroll position in the world
     // eslint-disable-next-line
 		if (document.getElementById('world-inner') != undefined) {
 			document.getElementById('world-inner').scrollLeft = this.state.scroll
 		}
 		
 		// Determine bird's position
-		const bird_x = state.scroll + 265,
+		const bird_x = state.scroll + 200,
 					bird_y = state.bird_y
-		
-		// Turn object array into simple array
-		let simpleWallArray = []
-		
-		for (var i = 0; i < state.walls.arrayLength; i++) {
-			simpleWallArray.push(state.walls.array[i].left)
-		}
-		
-//		const targetWall = simpleWallArray.filter(wall => wall > bird_x)[0]
+    
+    // Log to the console the Bird's coordinates
+    console.log(`(${bird_x}, ${bird_y})`)
     
     return (
       <div className="window game"

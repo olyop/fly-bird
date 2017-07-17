@@ -13,6 +13,7 @@ const GameTitle = props => (
 
 const StartGame = props => {
   
+  // CSS styling for the button
   let style = {
     color: props.database.hex.p[8],
     boxShadow: '0 10px',

@@ -21,9 +21,10 @@ class Index extends React.Component {
 	constructor(props) {
 		super(props)
 		
+    // Default settings for game
 		this.state = {
-			hasGameStarted: true,
-			difficultyLevel: 2,
+			hasGameStarted: false,
+			difficultyLevel: 1,
       highScore: 0
 		}
 		

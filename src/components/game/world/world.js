@@ -10,6 +10,7 @@ import background from './background.png'
 
 const World = props => {
 	
+  // CSS styling for the 'world-inner' element
 	const style = {
 		backgroundImage: 'url(' + background + ')',
 		backgroundColor: props.database.hex.p[4]
