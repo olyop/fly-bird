@@ -14,9 +14,9 @@ const generateWalls = (difficultyLevel, minWallHeight) => {
         
   // Determine spacing of walls
   let g
-  if (difficultyLevel === 0) { g = 150 }
-  if (difficultyLevel === 1) { g = 125 }
-  if (difficultyLevel === 2) { g = 100 }
+  if (difficultyLevel === 0) { g = 175 }
+  if (difficultyLevel === 1) { g = 150 }
+  if (difficultyLevel === 2) { g = 125 }
   
   // Determine wall range
   const r = w - (2 * m)

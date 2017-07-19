@@ -19,7 +19,7 @@ const database = {
 	],
   
   minWallHeight: 50,
-  jumpInterval: 40,
+  jumpInterval: 60,
   
   hex: {
     p: [

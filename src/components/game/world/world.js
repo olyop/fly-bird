@@ -7,6 +7,7 @@ import Bird from './bird/bird'
 import Walls from './walls/walls'
 
 import background from './background.png'
+import ground from './ground-1.png'
 
 const World = props => {
 	
@@ -25,6 +26,8 @@ const World = props => {
         <Sun
           x={265}
           y={450} />
+				
+				<div className="ground" style={{ backgroundImage: `url(${ ground })` }} />
 
         <Bird
           y={props.bird_y}

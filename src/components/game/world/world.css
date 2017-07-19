@@ -24,6 +24,18 @@
   left: 0;
 	right: 0; }
 
+.world .world-inner .ground {
+	z-index: 5;
+	position: fixed;
+	bottom: 100px;
+	height: 80px;
+	width: 600px;
+	left: 0;
+	background-position: top;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
 .world .world-inner .exit-game {
 	top: 0;
 	right: 0;

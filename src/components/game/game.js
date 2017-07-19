@@ -31,24 +31,37 @@ class Game extends React.Component {
   componentDidMount() { this.timerID = setInterval( () => this.tick(), 33 ) } // '33' is the 'frame rate'.
   componentWillUnmount() { clearInterval(this.timerID) }
   tick() {
+		
+		const fallRate = 4
     
     let newArray = []
     
     for (var i = 0; i < this.state.walls.arrayLength; i++) {
       newArray.push(this.state.walls.array[i].left)
     }
+		
+		if (this.state.bird_y <= 80) {
+			this.die()
+		}
     
     if (includes(newArray, this.state.scroll + 200)) {
       this.setState((prevState, props) => ({
         scroll: prevState.scroll + 4,
+				bird_y: prevState.bird_y - fallRate,
         score: prevState.score + 1
       }))
     } else {
       this.setState({
-        scroll: this.state.scroll + 4
+        scroll: this.state.scroll + 4,
+				bird_y: this.state.bird_y - fallRate
       })
     }
   }
+	
+	die() {
+		this.props.setHighScore(this.state.score)
+		this.props.exitGame()
+	}
   
 	// Bird controls
   birdDown() {
@@ -100,7 +113,7 @@ class Game extends React.Component {
 					bird_y = state.bird_y
     
     // Log to the console the Bird's coordinates
-    console.log(`(${bird_x}, ${bird_y})`)
+//    console.log(`(${bird_x}, ${bird_y})`)
     
     return (
       <div className="window game"

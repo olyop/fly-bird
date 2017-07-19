@@ -24,11 +24,12 @@ class Index extends React.Component {
     // Default settings for game
 		this.state = {
 			hasGameStarted: false,
-			difficultyLevel: 1,
+			difficultyLevel: 0,
       highScore: 0
 		}
 		
 		this.startGame = this.startGame.bind(this)
+		this.setHighScore = this.setHighScore.bind(this)
 		this.exitGame = this.exitGame.bind(this)
 		this.makeDifficultyEasier = this.makeDifficultyEasier.bind(this)
 		this.makeDifficultyHarder = this.makeDifficultyHarder.bind(this)
@@ -36,6 +37,11 @@ class Index extends React.Component {
 	
 	startGame() {
 		this.setState({ hasGameStarted: true })
+	}
+	
+	setHighScore(newScore) {
+		this.setState({ highScore: newScore })
+		console.log(newScore)
 	}
 	
 	exitGame() {
@@ -67,6 +73,7 @@ class Index extends React.Component {
             
             <Game
               database={props.database}
+							setHighScore={this.setHighScore}
 							exitGame={this.exitGame}
               indexState={this.state} />
             
