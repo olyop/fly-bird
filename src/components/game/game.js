@@ -113,7 +113,7 @@ class Game extends React.Component {
 					bird_y = state.bird_y
     
     // Log to the console the Bird's coordinates
-//    console.log(`(${bird_x}, ${bird_y})`)
+			console.log(`(${bird_x}, ${bird_y})`)
     
     return (
       <div className="window game"
